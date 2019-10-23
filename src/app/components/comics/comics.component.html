@@ -1,5 +1,5 @@
-<app-comic-tile
-	*ngFor="let comic of comics"
-	[comic]="comic"	
-	>
-	</app-comic-tile>
+<mat-grid-list cols=4>
+  <mat-grid-tile *ngFor="let comic of comics">
+    <app-comic-tile [comic]="comic"></app-comic-tile> 
+  </mat-grid-tile>
+</mat-grid-list>
