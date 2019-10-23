@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ComicTileComponent } from './components/comic-tile/comic-tile.component';
 import { ComicsComponent } from './components/comics/comics.component';
 import { ComicInfoComponent } from './components/comic-info/comic-info.component';
+import { CharacterTileComponent } from './components/character-tile/character-tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComicTileComponent,
     ComicsComponent,
-    ComicInfoComponent
+    ComicInfoComponent,
+    CharacterTileComponent
   ],
   imports: [
     BrowserModule,

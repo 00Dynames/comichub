@@ -4,4 +4,10 @@
   <img src={{comic.image}} height=20%>
   <br>
   {{ comic.description }}
+  <br>
+  <mat-grid-list cols=6>
+    <mat-grid-tile *ngFor="let character of comic.characters">
+      <app-character-tile [character]="character"></app-character-tile>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
