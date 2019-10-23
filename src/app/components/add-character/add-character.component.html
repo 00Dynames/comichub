@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  name:
+  <input
+    type="text"
+    id="name"
+    name="name"
+    ngModel
+  >
+  description:
+  <input
+    type="text"
+    id="description"
+    name="description"
+    ngModel
+  >
+  url:
+  <input
+    type="text"
+    id="url"
+    name="url"
+    ngModel
+  >
+  <button type="submit">add</button>
+</form>
