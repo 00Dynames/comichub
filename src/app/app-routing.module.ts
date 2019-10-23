@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ComicsComponent } from './components/comics/comics.component';
+import { ComicInfoComponent } from './components/comic-info/comic-info.component';
 
 const routes: Routes = [
-  { path: '', component: ComicsComponent }
+  { path: '', component: ComicsComponent },
+  { path: 'comics/:id', component: ComicInfoComponent }
 ];
 
 @NgModule({
