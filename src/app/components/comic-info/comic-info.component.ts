@@ -3,6 +3,8 @@ import { Comic } from '../../models/Comic';
 import { Character } from '../../models/Character';
 import { ComicsService } from '../../services/comics.service';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { AddCharacterComponent } from "../add-character/add-character.component";
 
 @Component({
   selector: 'app-comic-info',
@@ -14,7 +16,11 @@ export class ComicInfoComponent implements OnInit {
   comic:Comic;
   id:number;
 
-  constructor(private comicsservice:ComicsService, private route:ActivatedRoute) { }
+  constructor(
+    private comicsservice:ComicsService, 
+    private route:ActivatedRoute,
+    private dialog:MatDialog
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -28,6 +34,15 @@ export class ComicInfoComponent implements OnInit {
     this.comicsservice.getComicData().subscribe(comics => {
       this.comic = comics.filter(c => c.id == this.id)[0];
     });
+  }
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(AddCharacterComponent, dialogConfig);
   }
 
 }

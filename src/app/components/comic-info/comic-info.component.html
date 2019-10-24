@@ -5,10 +5,15 @@
   <br>
   {{ comic.description }}
   <br>
+  Characters 
+  <button 
+    title="addCharacter"
+    (click)="openDialog()"
+  > + </button>
+  <br>
   <mat-grid-list cols=6>
     <mat-grid-tile *ngFor="let character of comic.characters">
       <app-character-tile [character]="character"></app-character-tile>
     </mat-grid-tile>
   </mat-grid-list>
-  <app-add-character></app-add-character>
 </div>

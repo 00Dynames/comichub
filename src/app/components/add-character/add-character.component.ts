@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from "@angular/material";
 
 @Component({
   selector: 'app-add-character',

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +28,12 @@ import { AddCharacterComponent } from './components/add-character/add-character.
     AppRoutingModule,
     HttpClientModule,
     MatGridListModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
+  ],
+  entryComponents: [
+    AddCharacterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
