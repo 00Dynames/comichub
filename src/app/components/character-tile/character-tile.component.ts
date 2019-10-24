@@ -11,10 +11,12 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 export class CharacterTileComponent implements OnInit {
 
   @Input() character:Character;
+  isHot:boolean;
 
   constructor(private dialog:MatDialog) { }
 
   ngOnInit() {
+    this.isHot = this.character.numberOfRoles >= 2000;
   }
 
   openDeleteConfirm() {

@@ -1,5 +1,6 @@
 <div>
   {{ character.name }}
+  <div *ngIf="isHot"> HOT </div>
   <button 
     title="deleteCharacter"
     (click)="openDeleteConfirm()"
