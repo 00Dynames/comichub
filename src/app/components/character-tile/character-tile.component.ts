@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Character } from '../../models/Character';
+import { DeleteCharacterComponent } from '../delete-character/delete-character.component';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
   selector: 'app-character-tile',
@@ -10,9 +12,18 @@ export class CharacterTileComponent implements OnInit {
 
   @Input() character:Character;
 
-  constructor() { }
+  constructor(private dialog:MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openDeleteConfirm() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+ 
+    this.dialog.open(DeleteCharacterComponent, dialogConfig);
   }
 
 }

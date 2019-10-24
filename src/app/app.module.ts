@@ -13,6 +13,7 @@ import { ComicsComponent } from './components/comics/comics.component';
 import { ComicInfoComponent } from './components/comic-info/comic-info.component';
 import { CharacterTileComponent } from './components/character-tile/character-tile.component';
 import { AddCharacterComponent } from './components/add-character/add-character.component';
+import { DeleteCharacterComponent } from './components/delete-character/delete-character.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddCharacterComponent } from './components/add-character/add-character.
     ComicsComponent,
     ComicInfoComponent,
     CharacterTileComponent,
-    AddCharacterComponent
+    AddCharacterComponent,
+    DeleteCharacterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { AddCharacterComponent } from './components/add-character/add-character.
     BrowserAnimationsModule
   ],
   entryComponents: [
-    AddCharacterComponent
+    AddCharacterComponent,
+    DeleteCharacterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

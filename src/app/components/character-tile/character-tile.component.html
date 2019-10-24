@@ -1,6 +1,9 @@
 <div>
   {{ character.name }}
-  <button title="deleteCharacter">
+  <button 
+    title="deleteCharacter"
+    (click)="openDeleteConfirm()"
+  >
     X
   </button>
 </div>
