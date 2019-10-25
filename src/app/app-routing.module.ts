@@ -5,7 +5,7 @@ import { ComicInfoComponent } from './components/comic-info/comic-info.component
 
 const routes: Routes = [
   { path: '', component: ComicsComponent },
-  { path: 'comics/:id', component: ComicInfoComponent }
+  { path: 'comics/:name', component: ComicInfoComponent }
 ];
 
 @NgModule({
