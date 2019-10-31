@@ -1,19 +1,30 @@
 <div>
-  {{ comic.name }}
+  <mat-grid-list cols=3>
+    <mat-grid-tile 
+      [colspan]=1
+    >
+      <img src={{comic.image}} height=500>
+    </mat-grid-tile>
+    <mat-grid-tile 
+      [colspan]=2
+    >
+      {{ comic.name }}
+      <br>
+      {{ comic.description }}
+    </mat-grid-tile>
   <br>
-  <img src={{comic.image}} height=20%>
-  <br>
-  {{ comic.description }}
-  <br>
+  </mat-grid-list>
   Characters 
   <button 
     title="addCharacter"
     (click)="openDialog()"
   > + </button>
   <br>
-  <mat-grid-list cols=6>
+  <mat-grid-list cols=6 rowHeight=2:3>
     <mat-grid-tile *ngFor="let character of comic.characters">
-      <app-character-tile [character]="character"></app-character-tile>
+      <app-character-tile 
+        [character]="character"
+      ></app-character-tile>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

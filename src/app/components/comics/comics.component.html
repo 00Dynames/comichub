@@ -1,4 +1,8 @@
-<mat-grid-list cols=4>
+<mat-grid-list 
+  cols=4 
+  gutterSize=20
+  rowHeight=1:2
+>
   <mat-grid-tile *ngFor="let comic of comics">
     <app-comic-tile [comic]="comic"></app-comic-tile> 
   </mat-grid-tile>

@@ -1,9 +1,12 @@
 <div>
   <a href="/comics/{{comic.slug}}">
-    <img src={{comic.image}} height=20%>
-  </a>
+    <img 
+      src={{comic.image}} 
+      width=300   
+    >
   <br>
   {{ comic.name }}
+  </a>
   <br>
-  {{ comic.description }}
+  {{ (comic.description.length > 300)? (comic.description | slice:0:300) + '...':(comic.description) }}
 </div>

@@ -42,7 +42,26 @@ export class ComicInfoComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(AddCharacterComponent, dialogConfig);
+    let dialogRef = this.dialog.open(AddCharacterComponent, dialogConfig);
+    
+    dialogRef.componentInstance.addCharacter.subscribe(result => {
+      this.addCharacter(result);
+      dialogRef.close([]);
+    });
+    
+    dialogRef.componentInstance.deleteCharacter.subscribe(result => {
+      this.deleteCharacter(result);
+      dialogRef.close([]);
+    });
   }
 
+  addCharacter(c:Character){
+    console.log("ADD EVENT");
+    this.comic.characters.unshift(c);
+  }
+
+  deleteCharacter(c:Character){
+    console.log("DELETE EVENT");
+    this.comic.characters = this.comic.character.filter(character => character != c);
+  }
 }

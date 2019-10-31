@@ -24,8 +24,15 @@ export class CharacterTileComponent implements OnInit {
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
- 
-    this.dialog.open(DeleteCharacterComponent, dialogConfig);
+    dialogConfig.data = { character: this.character };
+
+    let dialogRef = this.dialog.open(DeleteCharacterComponent, dialogConfig);
+    const sub = dialogRef.componentInstance.deleteCharacter.subscribe(() => this.deleteCharacter());
+  }
+
+  deleteCharacter(){
+    console.log("DELETE");
+    //TODO: call delete on comic service here
   }
 
 }

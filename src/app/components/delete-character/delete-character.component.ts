@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
+import { Character } from '../../models/Character';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-delete-character',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteCharacterComponent implements OnInit {
 
-  constructor() { }
+  character:Character;
+  @Output() deleteCharacter = new EventEmitter();
+
+  constructor(
+    public dialogRef: MatDialogRef<DeleteCharacterComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
   ngOnInit() {
+  }
+
+  onYes(){
+  //console.log(this.data.character);
+    this.deleteCharacter.emit(this.data.character);
   }
 
 }

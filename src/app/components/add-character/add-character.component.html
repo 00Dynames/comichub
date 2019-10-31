@@ -1,26 +1,33 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-  name:
-  <input
-    type="text"
-    id="name"
-    name="name"
-    ngModel
-  >
-  <br>
-  description:
-  <input
-    type="text"
-    id="description"
-    name="description"
-    ngModel
-  >
-  <br>
-  url:
-  <input
-    type="text"
-    id="url"
-    name="url"
-    ngModel
-  >
-  <button type="submit">add</button>
-</form>
+<div>
+  Add a new character
+  <form (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm">
+    <label>Name:</label>
+    <input 
+      type="text" 
+      name="name" 
+      [(ngModel)]="model.name" 
+      #name="ngModel" 
+      required 
+    />
+    <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+      <div *ngIf="name.errors.required">Character name is required</div>
+    </div>
+    <br>
+    Description:
+    <input
+      type="text"
+      id="description"
+      name="description"
+      ngModel
+    >
+    <br>
+    image-url:
+    <input
+      type="url"
+      id="url"
+      name="image"
+      ngModel
+    >
+    <button type="submit">Save</button>
+  </form>
+</div>

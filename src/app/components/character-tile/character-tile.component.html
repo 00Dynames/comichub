@@ -1,6 +1,11 @@
 <div>
+  <img src={{character.image}} height=100>
+  <br>
   {{ character.name }}
   <div *ngIf="isHot"> HOT </div>
+  {{ character.numberOfRoles }}
+  <br>
+  {{ character.description }}
   <button 
     title="deleteCharacter"
     (click)="openDeleteConfirm()"

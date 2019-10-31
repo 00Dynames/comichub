@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 
@@ -9,7 +9,9 @@ import { MatDialog, MatDialogConfig } from "@angular/material";
 })
 export class AddCharacterComponent implements OnInit {
 
+  model:any = {};
   @ViewChild('f', {static:false}) characterform:NgForm;
+  @Output() addCharacter: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -20,5 +22,10 @@ export class AddCharacterComponent implements OnInit {
     console.log(form.value);
     //TODO: store the form data somewhere
     //TODO: add http requests to mock API
+    this.addCharacter.emit(form.value);
+
+
+
   }
+
 }
