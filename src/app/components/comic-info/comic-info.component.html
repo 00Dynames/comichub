@@ -24,6 +24,7 @@
     <mat-grid-tile *ngFor="let character of comic.characters">
       <app-character-tile 
         [character]="character"
+        (forwardDeleteChar)="deleteCharacter($event)"
       ></app-character-tile>
     </mat-grid-tile>
   </mat-grid-list>

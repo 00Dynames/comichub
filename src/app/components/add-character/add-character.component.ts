@@ -20,12 +20,8 @@ export class AddCharacterComponent implements OnInit {
 
   onSubmit(form:NgForm){
     console.log(form.value);
-    //TODO: store the form data somewhere
-    //TODO: add http requests to mock API
     this.addCharacter.emit(form.value);
-
-
-
+    //TODO: add delete call to comics service
   }
 
 }

@@ -48,11 +48,6 @@ export class ComicInfoComponent implements OnInit {
       this.addCharacter(result);
       dialogRef.close([]);
     });
-    
-    dialogRef.componentInstance.deleteCharacter.subscribe(result => {
-      this.deleteCharacter(result);
-      dialogRef.close([]);
-    });
   }
 
   addCharacter(c:Character){
@@ -62,6 +57,6 @@ export class ComicInfoComponent implements OnInit {
 
   deleteCharacter(c:Character){
     console.log("DELETE EVENT");
-    this.comic.characters = this.comic.character.filter(character => character != c);
+    this.comic.characters = this.comic.characters.filter(character => character != c);
   }
 }
