@@ -13,21 +13,30 @@
       <div *ngIf="name.errors.required">Character name is required</div>
     </div>
     <br>
-    Description:
-    <input
-      type="text"
-      id="description"
-      name="description"
-      ngModel
-    >
+    <label>Description:</label>
+    <input 
+      type="text" 
+      name="description" 
+      [(ngModel)]="model.description" 
+      #description="ngModel" 
+      required 
+    />
+    <div *ngIf="f.submitted && description.invalid" class="invalid-feedback">
+      <div *ngIf="description.errors.required">Character description is required</div>
+    </div>
     <br>
-    image-url:
-    <input
-      type="url"
-      id="url"
-      name="image"
-      ngModel
-    >
+    <label>Image-url:</label>
+    <input 
+      type="url" 
+      name="image" 
+      [(ngModel)]="model.image-url" 
+      #image="ngModel" 
+      required 
+    />
+    <div *ngIf="f.submitted && image.invalid" class="invalid-feedback">
+      <div *ngIf="image.errors.required">Character image is required</div>
+    </div>
+    <br>
     <button type="submit">Save</button>
   </form>
 </div>

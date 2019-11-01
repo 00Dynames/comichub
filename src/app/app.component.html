@@ -1,6 +1,11 @@
 <div>
-  <a href="">
-	  HOME
-  </a>
+  <mat-toolbar>
+    <a href="" style="color:white">
+	    HOME
+    </a>
+    <div *ngFor="let p of path|slice:2">
+      | {{ p }}
+    </div>
+  </mat-toolbar>
 	<router-outlet></router-outlet>
 </div>
