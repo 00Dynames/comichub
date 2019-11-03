@@ -15,6 +15,7 @@ import { ComicInfoComponent } from './components/comic-info/comic-info.component
 import { CharacterTileComponent } from './components/character-tile/character-tile.component';
 import { AddCharacterComponent } from './components/add-character/add-character.component';
 import { DeleteCharacterComponent } from './components/delete-character/delete-character.component';
+import { CharacterDescComponent } from './components/character-desc/character-desc.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DeleteCharacterComponent } from './components/delete-character/delete-c
     ComicInfoComponent,
     CharacterTileComponent,
     AddCharacterComponent,
-    DeleteCharacterComponent
+    DeleteCharacterComponent,
+    CharacterDescComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { DeleteCharacterComponent } from './components/delete-character/delete-c
   ],
   entryComponents: [
     AddCharacterComponent,
-    DeleteCharacterComponent
+    DeleteCharacterComponent,
+    CharacterDescComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

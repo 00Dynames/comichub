@@ -5,7 +5,13 @@
   <div *ngIf="isHot"> HOT </div>
   {{ character.numberOfRoles }}
   <br>
-  {{ character.description }}
+  {{ (character.description.length > 150)? (character.description | slice:0:150) + '...':(character.description) }}
+  <button
+    title="characterDesc"
+    (click)="openCharacterDesc()"
+  > 
+    more 
+  </button>
   <button 
     title="deleteCharacter"
     (click)="openDeleteConfirm()"

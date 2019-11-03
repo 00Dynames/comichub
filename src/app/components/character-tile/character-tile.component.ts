@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Character } from '../../models/Character';
 import { DeleteCharacterComponent } from '../delete-character/delete-character.component';
+import { CharacterDescComponent } from '../character-desc/character-desc.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
@@ -32,6 +33,16 @@ export class CharacterTileComponent implements OnInit {
       this.deleteCharacter(event);
       dialogRef.close([]);
     });
+  }
+
+  openCharacterDesc() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = { character: this.character };
+
+    this.dialog.open(CharacterDescComponent, dialogConfig);
   }
 
   deleteCharacter(c:Character){
