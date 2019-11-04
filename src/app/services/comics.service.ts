@@ -14,4 +14,7 @@ export class ComicsService {
   getComicData(): Observable<Comic[]>{
 	  return this.http.get<Comic[]>('https://propertymecomics.s3.amazonaws.com/comics');
   }
+
+  //TODO: add character to a comic
+  //TODO: delete character from a comic
 }
