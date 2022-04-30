@@ -1,0 +1,27 @@
+<div>
+  <h2>Comics list</h2>
+  <ul>
+    <li *ngFor="let comic of comics">
+      <div>
+
+        <button type="button" (click)="onSelect(comic)">
+          <h3>{{ comic.name|uppercase }}</h3>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="selectedComic">
+    <h3>{{ selectedComic.name|uppercase }}</h3>
+    <div><span>Description: </span>{{ selectedComic.description }}</div>
+    <div><span>Release Date: </span>{{ selectedComic.releaseDate|date:'short' }}</div>
+    <div>
+      <ul>
+        <li *ngFor="let character of selectedComic.characters">
+          {{ character.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
