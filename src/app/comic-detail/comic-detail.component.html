@@ -1,0 +1,12 @@
+<div *ngIf="comic">
+  <h3>{{ comic.name|uppercase }}</h3>
+  <div><span>Description: </span>{{ comic.description }}</div>
+  <div><span>Release Date: </span>{{ comic.releaseDate|date:'short' }}</div>
+  <div>
+    <ul>
+      <li *ngFor="let character of comic.characters">
+        {{ character.name }}
+      </li>
+    </ul>
+  </div>
+</div>
