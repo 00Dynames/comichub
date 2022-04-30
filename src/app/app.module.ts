@@ -5,11 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComicsComponent } from './comics/comics.component';
+import { ComicDetailComponent } from './comic-detail/comic-detail.component';
+import { ChracterDetailComponent } from './chracter-detail/chracter-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComicsComponent
+    ComicsComponent,
+    ComicDetailComponent,
+    ChracterDetailComponent
   ],
   imports: [
     BrowserModule,

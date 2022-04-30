@@ -11,17 +11,5 @@
     </li>
   </ul>
 
-  <div *ngIf="selectedComic">
-    <h3>{{ selectedComic.name|uppercase }}</h3>
-    <div><span>Description: </span>{{ selectedComic.description }}</div>
-    <div><span>Release Date: </span>{{ selectedComic.releaseDate|date:'short' }}</div>
-    <div>
-      <ul>
-        <li *ngFor="let character of selectedComic.characters">
-          {{ character.name }}
-        </li>
-      </ul>
-    </div>
-  </div>
-
+  <app-comic-detail [comic]="selectedComic"></app-comic-detail>
 </div>
