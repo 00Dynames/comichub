@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comic } from '../models/Comic'
+import { Character } from '../models/Character'
 
 @Component({
   selector: 'app-comic-detail',
@@ -9,10 +10,14 @@ import { Comic } from '../models/Comic'
 export class ComicDetailComponent implements OnInit {
 
   @Input() comic?: Comic;
+  selectedCharacter?: Character;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSelectCharacter(character: Character): void {
+    this.selectedCharacter = character;
+  }
 }

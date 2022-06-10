@@ -5,8 +5,10 @@
   <div>
     <ul>
       <li *ngFor="let character of comic.characters">
-        {{ character.name }}
+        <button (click)="onSelectCharacter(character)">{{ character.name }}</button>
+
       </li>
     </ul>
+    <app-character-detail [character]="selectedCharacter"></app-character-detail>
   </div>
 </div>
